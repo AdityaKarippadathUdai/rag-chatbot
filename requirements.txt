@@ -9,5 +9,4 @@ transformers>=4.40.0
 torch>=2.0.0
 docx2txt>=0.8
 unstructured>=0.15.0
-python-magic-bin>=0.4.14  # For Windows (libmagic alternative)
-poppler-utils>=0.1.0     # For PDF processing with unstructured
+python-magic>=0.4.27
