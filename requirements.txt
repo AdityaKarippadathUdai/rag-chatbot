@@ -1,10 +1,13 @@
-streamlit
-langchain
-langchain-huggingface
-sentence-transformers
-chromadb
-pypdf
-transformers
-torch
-docx2txt
-unstructured
+streamlit>=1.42.0
+langchain>=0.3.0
+langchain-huggingface>=0.3.0
+langchain-community>=0.3.0
+sentence-transformers>=2.7.0
+chromadb>=0.5.0
+pypdf>=4.0.0
+transformers>=4.40.0
+torch>=2.0.0
+docx2txt>=0.8
+unstructured>=0.15.0
+python-magic-bin>=0.4.14  # For Windows (libmagic alternative)
+poppler-utils>=0.1.0     # For PDF processing with unstructured
