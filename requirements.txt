@@ -1,0 +1,10 @@
+streamlit
+langchain
+langchain-huggingface
+sentence-transformers
+chromadb
+pypdf
+transformers
+torch
+docx2txt
+unstructured
