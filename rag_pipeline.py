@@ -1,5 +1,5 @@
 # rag_pipeline.py
-from langchain.document_loaders import PyPDFLoader, TextLoader, Docx2txtLoader, UnstructuredMarkdownLoader
+from langchain_community.document_loaders import PyPDFLoader, TextLoader, Docx2txtLoader, UnstructuredMarkdownLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings, HuggingFacePipeline
 from langchain.vectorstores import Chroma
@@ -29,7 +29,11 @@ def process_uploaded_files(uploaded_files, max_file_size=10 * 1024 * 1024):
                 elif uploaded_file.name.endswith(".docx"):
                     loader = Docx2txtLoader(file_path)
                 elif uploaded_file.name.endswith(".md"):
-                    loader = UnstructuredMarkdownLoader(file_path)
+                    try:
+                        loader = UnstructuredMarkdownLoader(file_path)
+                    except ImportError:
+                        print(f"Skipping {uploaded_file.name}: UnstructuredMarkdownLoader not available.")
+                        continue
                 else:
                     print(f"Skipping {uploaded_file.name}: Unsupported file type.")
                     continue
